@@ -1,0 +1,574 @@
+<!DOCTYPE html>
+<html lang="fa" dir="rtl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <!-- ===== تایتل (عنوان صفحه) ===== -->
+    <title>طراحی سایت حرفه ای با قیمت مناسب | گل رز وب</title>
+
+    <!-- ===== توضیحات (Meta Description) ===== -->
+    <meta name="description" content="طراحی سایت حرفه ای با قیمت ارزان و مناسب ترین هزینه در ایران. طراحی سایت اختصاصی، سئو شده و ریسپانسیو با کیفیت عالی و قیمت باورنکردنی.">
+
+    <!-- ===== کلمات کلیدی (Meta Keywords) ===== -->
+    <meta name="keywords" content="طراحی سایت حرفه ای, قیمت طراحی سایت, طراحی سایت ارزان, طراحی سایت اختصاصی, بهترین قیمت طراحی سایت, طراحی سایت در ایران">
+
+    <!-- ===== نویسنده ===== -->
+    <meta name="author" content="گل رز وب">
+
+    <!-- ===== ربات‌های جستجو ===== -->
+    <meta name="robots" content="index, follow, max-snippet:-1, max-image-preview:large">
+
+    <!-- ===== آدرس استاندارد (Canonical) ===== -->
+    <link rel="canonical" href="https://goleroz-web.github.io">
+
+    <!-- ===== زبان و جهت ===== -->
+    <html lang="fa" dir="rtl">
+
+    <!-- ===== Open Graph (برای نمایش در شبکه‌های اجتماعی) ===== -->
+    <meta property="og:title" content="طراحی سایت حرفه ای با قیمت ارزان و مناسب | گل رز وب">
+    <meta property="og:description" content="طراحی سایت حرفه ای با قیمت ارزان و مناسب ترین هزینه در ایران. طراحی سایت اختصاصی، سئو شده و ریسپانسیو.">
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://goleroz-web.github.io/">
+    <meta property="og:image" content="https://goleroz-web.github.io/logo.png">
+
+    <!-- ===== توییتر کارت ===== -->
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="طراحی سایت حرفه ای با قیمت ارزان و مناسب | گل رز وب">
+    <meta name="twitter:description" content="طراحی سایت حرفه ای با قیمت ارزان و مناسب ترین هزینه در ایران.">
+
+    <!-- ===== لینک به فونت آیکون‌ها ===== -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+
+    <!-- ===== لینک به فایل CSS ===== -->
+    <link rel="stylesheet" href="style.css">
+
+    <!-- ===== لینک به فایل جاوااسکریپت ===== -->
+    <script src="script.js" defer></script>
+
+</head>
+<body>
+
+<div class="container">
+
+    <!-- ========================================================== -->
+    <!-- HEADER (سرصفحه)                                            -->
+    <!-- ========================================================== -->
+    <header class="header">
+        <div class="logo-area">
+            <div class="logo-place">
+               <img src="logo.png" alt="">
+            </div>
+            <span class="logo-text">طراحی خاص</span>
+        </div>
+
+        <nav class="main-nav">
+            <a href="#" class="active" onclick="showPage('home')">
+                <i class="fas fa-home"></i> خانه
+            </a>
+            <a href="#" onclick="showPage('services')">
+                <i class="fas fa-paint-brush"></i> خدمات
+            </a>
+            <a href="#" onclick="showPage('contact')">
+                <i class="fas fa-phone-alt"></i> تماس
+            </a>
+            <a href="#"  onclick="showPage('portfolio')">
+                <i class="fas fa-gem"></i> نمونه کارها
+            </a>
+        </nav>
+
+        <div class="header-left">
+            <div class="search-box">
+                <input type="text" placeholder="جستجو...">
+                <i class="fas fa-search"></i>
+            </div>
+            <div class="hamburger-menu">
+                <div class="hamburger-icon">
+                    <i class="fas fa-bars"></i>
+                </div>
+                <div class="dropdown-content">
+                    <a href="#" onclick="showPage('home')"><i class="fas fa-home"></i> خانه</a>
+                    <a href="#" onclick="showPage('services')"><i class="fas fa-cog"></i> خدمات</a>
+                    <a href="#" onclick="showPage('contact')"><i class="fas fa-address-card"></i> تماس</a>
+                    <a href="#"><i class="fas fa-gem"></i> نمونه کارها</a>
+                    <a href="#"><i class="fas fa-question-circle"></i> راهنما</a>
+                </div>
+            </div>
+        </div>
+    </header>
+
+   <!--پیام خوش آمد گویی  -->
+
+    <div id="welcomeBanner" class="welcome-banner">
+        <i class="fas fa-rose"></i>
+        به وب سایت <strong>گل رز وب</strong> خوش آمدید
+        <i class="fas fa-rose"></i>
+        <button class="close-welcome" onclick="closeWelcome()">✕</button>
+    </div>
+
+    <!-- ========================================================== -->
+<!-- ۴ عکس کوچک تزئینی (زیر هدر)                              -->
+<!-- ========================================================== -->
+<section class="decorative-images">
+    <div class="container">
+        <div class="deco-grid">
+            <div class="deco-item">
+                <img src="ch.png" alt="تصویر تزئینی ۱">
+            </div>
+            <div class="deco-item">
+                <img src="hen.png" alt="تصویر تزئینی ۲">
+            </div>
+            <div class="deco-item">
+                <img src="limo.png" alt="تصویر تزئینی ۳">
+            </div>
+            <div class="deco-item">
+                <img src="toot.png" alt="تصویر تزئینی ۴">
+            </div>
+        </div>
+    </div>
+</section>
+
+    <!-- ========================================================== -->
+    <!-- MAIN (محتوای اصلی)                                        -->
+    <!-- ========================================================== -->
+    <main class="main-content">
+
+        <!-- ===== صفحه خانه ===== -->
+       
+<!-- ===== صفحه اول: خانه ===== -->
+<section id="page-home" class="page active">
+    <div class="hero">
+        <h1>
+            <i class="fas fa-sparkles"></i> طراحی سایت حرفه‌ای و اختصاصی گل رز وب
+            <i class="fas fa-sparkles"></i>
+        </h1>
+
+        <!-- ========================================================== -->
+        <!-- متن اصلی قدرتمند و سئو شده (جایگزین شده با متن جدید)      -->
+        <!-- ========================================================== -->
+        <div class="main-text">
+            
+            <!-- تیتر اصلی با فونت بنفش پررنگ و براق -->
+            <h2 class="main-title">
+                <i class="fas fa-gem"></i> وب‌ سایتی که دقیقاً شبیه شماست
+            </h2>
+            
+            <p class="sub-title">
+                طراحی اختصاصی، کدنویسی حرفه‌ای، بدون قالب و بدون محدودیت
+            </p>
+
+            <!-- پاراگراف اول: معرفی -->
+            <p>
+                <strong>چرا وب‌ سایت گل رز وب ؟</strong><br>
+                طراحی سایت با استفاده از کد نویسی <strong>و نه قالب آماده </strong>ساخته می شود.
+                یعنی سایت شما، دقیقاً شبیه هزاران سایت دیگر نخواهد بود. 
+                 من از ابتدا برای شما <strong>طراحی می‌کنم</strong>. 
+                از ایده تا اجرا، همه چیز مطابق با <strong>هویت، برند و نیازهای خاص شما</strong>ست.
+            </p>
+
+            <!-- مزایا با آیکون -->
+            <div class="benefits-list">
+                <span><i class="fas fa-check-circle"></i> سایت اختصاصی: هر بخش دقیقاً همان چیزی است که شما می‌خواهید</span>
+                <span><i class="fas fa-check-circle"></i> سرعت بالا: کدهای بهینه و سبک</span>
+                <span><i class="fas fa-check-circle"></i> امنیت عالی: بدون آسیب‌پذیری‌های رایج در قالب‌های آماده</span>
+                <span><i class="fas fa-check-circle"></i> نمایش عالی در موبایل: ریسپانسیو و سازگار با همه دستگاه‌ها</span>
+                <span><i class="fas fa-check-circle"></i> سئوی حرفه‌ای: کدهای استاندارد و دوست‌داشتنی برای گوگل</span>
+            </div>
+
+            <!-- جمله کلیدی (با جدیدترین روش‌ها و کدهای اختصاصی) -->
+            <p class="highlight-text">
+                <i class="fas fa-code"></i>
+                من با استفاده از جدیدترین ابزارهای کدنویسی و تکنولوژی‌های روز، 
+                وب‌ سایت شما را از صفر تا صد طراحی می‌کنم. 
+                تمام کدها <strong>اختصاصی</strong> و مطابق با نیازهای شما نوشته می‌شوند.
+                <i class="fas fa-code"></i>
+            </p>
+
+            <!-- برچسب قیمت -->
+            <div class="price-tag">
+                <i class="fas fa-tag"></i> ۳.۰۰۰.۰۰۰ تا ۸.۰۰۰.۰۰۰ تومان
+            </div>
+
+            <!-- جدول هزینه‌ها -->
+            <div class="price-table">
+                <h3><i class="fas fa-list-ul"></i> خدمات و هزینه‌ها</h3>
+                <table>
+                    <tr>
+                        <th>نوع سایت</th>
+                        <th>توضیحات</th>
+                        <th>هزینه</th>
+                    </tr>
+                    <tr>
+                        <td><strong>سایت معرفی برند</strong></td>
+                        <td>۵ تا ۱۰ صفحه، فرم تماس، گالری تصاویر</td>
+                        <td><span class="price-highlight">۳ تا ۴ میلیون</span></td>
+                    </tr>
+                    <tr>
+                        <td><strong>سایت شرکتی حرفه‌ای</strong></td>
+                        <td>تا ۱۵ صفحه، اسلایدر اختصاصی، بخش مقالات</td>
+                        <td><span class="price-highlight">۴ تا ۶ میلیون</span></td>
+                    </tr>
+                    <tr>
+                        <td><strong>سایت فروشگاهی</strong></td>
+                        <td>فروشگاه کامل با سبد خرید و مدیریت محصولات</td>
+                        <td><span class="price-highlight">۴ تا ۸ میلیون</span></td>
+                    </tr>
+                </table>
+                <p class="table-note">
+                    <i class="fas fa-info-circle"></i> هزینه نهایی پس از مشاوره رایگان و بر اساس پیچیدگی پروژه تعیین می‌شود.
+                </p>
+            </div>
+
+            <!-- هزینه‌های سالانه -->
+            <div class="annual-costs">
+                <h3><i class="fas fa-calendar-alt"></i> هزینه‌های سالانه (بر عهده شما)</h3>
+                <ul>
+                    <li><i class="fas fa-globe"></i> <strong>دامنه:</strong> حدود ۲۰۰ تا ۴۰۰ هزار تومان در سال</li>
+                    <li><i class="fas fa-server"></i> <strong>هاست:</strong> حدود ۱ تا ۲.۵ میلیون تومان در سال</li>
+                </ul>
+                <p class="note">
+                    <i class="fas fa-shield-alt"></i> ثبت‌نام به نام خودتان انجام می‌شود تا مالکیت کامل با شما باشد.
+                </p>
+            </div>
+
+            <!-- چرا من؟ -->
+            <div class="why-me">
+                <h3><i class="fas fa-question-circle"></i> چرا من؟</h3>
+                <ul>
+                    <li><i class="fas fa-check-circle"></i> <strong>کدنویسی اختصاصی:</strong> نه قالب آماده</li>
+                    <li><i class="fas fa-check-circle"></i> <strong>تعهد به کیفیت:</strong> هر پروژه را با دقت کامل انجام می‌دهم</li>
+                    <li><i class="fas fa-check-circle"></i> <strong>پشتیبانی پس از تحویل:</strong> یک ماه رایگان</li>
+                    <li><i class="fas fa-check-circle"></i> <strong>شفافیت کامل:</strong> بدون هزینه‌های پنهان</li>
+                    <li><i class="fas fa-check-circle"></i> <strong>تحویل تمام کدها:</strong> شما مالک کامل سایت هستید</li>
+                </ul>
+            </div>
+
+            <!-- دعوت به اقدام -->
+           <!-- ===== دعوت به اقدام (فقط واتساپ) ===== -->
+<div class="cta-final">
+    <p>
+        <i class="fas fa-rocket"></i>
+        <strong>آماده‌اید سایت رویاهایتان را بسازیم؟</strong>
+        <i class="fas fa-rocket"></i>
+    </p>
+    <div class="cta-contacts">
+        <a href="https://wa.me/989371064680" target="_blank" class="cta-contact-btn whatsapp-btn">
+            <i class="fab fa-whatsapp"></i> مشاوره واتساپ
+        </a>
+    </div>
+</div>
+        </div>
+        <!-- ===== پایان متن اصلی ===== -->
+
+        <!-- جای عکس‌ها -->
+       <!-- جای عکس‌ها -->
+<div class="image-slots">
+    <!-- عکس شماره ۱ -->
+    <div class="img-placeholder">
+        <img src="lux.png" alt=" ۱">
+    </div>
+    
+    <!-- عکس شماره ۲ -->
+    <div class="img-placeholder">
+        <img src="limo.png" alt=" ۲">
+    </div>
+    
+    <!-- عکس شماره ۳ -->
+    <div class="img-placeholder">
+        <img src="r.png" alt=" ۳">
+    </div>
+    
+    <!-- عکس شماره ۴ -->
+    <div class="img-placeholder">
+        <img src="l.png" alt=" ۴">
+    </div>
+</div>
+
+ <!--
+      <p class="hero-footer">
+            <i class="fas fa-star" style="color:#8b00ff;"></i> 
+            خاص، براق، منحصربه‌فرد برای جذب هر مشتری 
+            <i class="fas fa-star" style="color:#8b00ff;"></i>
+        </p>-->
+    </div>
+
+                <!-- ===== ۴ جای عکس ===== -->
+                <div class="image-slots">
+                    <div class="img-placeholder">
+                       <img src="lux.png" alt="">
+                    </div>
+                    <div class="img-placeholder">
+                       <img src="logo.png" alt="">
+                    </div>
+                    <div class="img-placeholder">
+                       <img src="hen.png" alt="">
+                    </div>
+                    <div class="img-placeholder">
+                       <img src="l.png" alt="">
+                    </div>
+                </div>
+
+                <p class="hero-footer">
+                    <i class="fas fa-star"></i>
+                    خاص، براق، منحصربه‌فرد گل رز وب 
+                    <i class="fas fa-star"></i>
+                </p>
+            </div>
+        </section>
+
+        <!-- ===== صفحه خدمات ===== -->
+        <section id="page-services" class="page">
+            <h2 class="page-title">
+                <i class="fas fa-palette"></i> خدمات طراحی سایت
+            </h2>
+
+            <div class="intro-box">
+                <h3>✨ چرا طراحی سایت با ما؟</h3>
+                <p>
+                    ما <strong>طراحی سایت</strong> را به یک اثر هنری تبدیل می‌کنیم.
+                    هر سایت منحصر‌به‌فرد و مطابق با <strong>سلیقه شما</strong> طراحی می‌شود.
+                </p>
+                <div class="intro-features">
+                    <span><i class="fas fa-check-circle"></i> دارای مدرک مهندسی نرم افزار کامپیوتر</span>
+                    <span><i class="fas fa-check-circle"></i> طراحی سایت با کدنویسی طبق سلیقه ی شما</span>
+                    <span><i class="fas fa-check-circle"></i> پشتیبانی ۱۲ ساعته</span>
+                </div>
+            </div>
+
+            <div class="service-grid">
+                <div class="service-card">
+                    <i class="fas fa-code"></i>
+                    <h3>سایت ساده</h3>
+                    <p>javascript / HTML/CSS</p>
+                    <div class="service-price">از ۳ میلیون</div>
+                    <a href="#" class="service-btn" onclick="showPage('contact')">درخواست مشاوره</a>
+                </div>
+                <div class="service-card">
+                    <i class="fas fa-laptop-code"></i>
+                    <h3>سایت پیشرفته</h3>
+                    <p>ری‌اکت / ویو / اختصاصی</p>
+                    <div class="service-price">از ۴ میلیون</div>
+                    <a href="#" class="service-btn" onclick="showPage('contact')">درخواست مشاوره</a>
+                </div>
+                <div class="service-card">
+                    <i class="fas fa-mobile-alt"></i>
+                    <h3>سایت فروشگاهی</h3>
+                    <p>فروشگاه اینترنتی</p>
+                    <div class="service-price">از ۴ میلیون</div>
+                    <a href="#" class="service-btn" onclick="showPage('contact')">درخواست مشاوره</a>
+                </div>
+                <div class="service-card">
+                    <i class="fas fa-crown"></i>
+                    <h3>سایت لوکس</h3>
+                    <p>طراحی خاص و منحصر‌به‌فرد</p>
+                    <div class="service-price">از ۴ میلیون</div>
+                    <a href="#" class="service-btn" onclick="showPage('contact')">درخواست مشاوره</a>
+                </div>
+            </div>
+
+            <div class="cta-section">
+                <p>
+                    <i class="fas fa-gem"></i>
+                    برای طراحی سایت رویایی خود، همین حالا تماس بگیرید
+                    <i class="fas fa-gem"></i>
+                </p>
+                <a href="#" class="cta-btn" onclick="showPage('contact')">
+                    <i class="fas fa-phone"></i> مشاوره رایگان
+                </a>
+            </div>
+        </section>
+
+        <!-- ===== صفحه تماس ===== -->
+       
+              
+        <!-- ========================================================== -->
+<!-- صفحه تماس (با لینک‌های شبکه‌های اجتماعی)                 -->
+<!-- ========================================================== -->
+<section id="page-contact" class="page">
+    <h2 class="page-title">
+        <i class="fas fa-address-card"></i> راه‌های ارتباطی
+    </h2>
+
+    <!-- ===== دکمه‌های شبکه‌های اجتماعی (با لینک مستقیم) ===== -->
+    <div class="contact-info">
+        <!-- واتساپ با لینک مستقیم -->
+        <a href="https://wa.me/۰۹۳۷۱۰۶۴۶۸۰" target="_blank" class="contact-btn whatsapp">
+            <i class="fab fa-whatsapp"></i> واتساپ
+        </a>
+        
+        <!-- تلگرام با لینک مستقیم -->
+        <a href="https://t.me/masidesigner555" target="_blank" class="contact-btn telegram">
+            <i class="fab fa-telegram"></i> تلگرام
+        </a>
+        
+        <!-- بله با لینک مستقیم -->
+        <a href="https://ble.ir/YourID" target="_blank" class="contact-btn bale">
+            <i class="fas fa-comment-dots"></i> بله
+        </a>
+        
+        <!-- اینستاگرام -->
+        <a href="https://instagram.com/YourID" target="_blank" class="contact-btn instagram">
+            <i class="fab fa-instagram"></i> اینستاگرام
+        </a>
+        
+        <!-- تماس تلفنی -->
+        <a href="tel:09371064680" class="contact-btn phone">
+            <i class="fas fa-phone"></i>  تلفن همراه
+        </a>
+    </div>
+
+    <!-- ===== اطلاعات تماس مستقیم ===== -->
+    <div class="contact-details">
+        <h3><i class="fas fa-info-circle"></i> اطلاعات تماس</h3>
+        
+        <div class="detail-item">
+            <i class="fas fa-phone"></i>
+            <span></span>
+        </div>
+        <div class="detail-item">
+            <i class="fas fa-mobile-alt"></i>
+            <span>موبایل ۰۹۳۷۱۰۶۴۶۸۰</span>
+        </div>
+        <div class="detail-item">
+            <i class="fas fa-envelope"></i>
+            <span>ایمیل: fred.fredi987.fred123@gmail.com.com</span>
+        </div>
+        <div class="detail-item">
+            <i class="fas fa-map-marker-alt"></i>
+            <span> ...</span>
+        </div>
+    </div>
+
+    <!-- ===== لینک‌های سریع شبکه‌های اجتماعی (آیکون‌های پایین) ===== -->
+    <div class="social-links-footer">
+        <a href="https://wa.me/989371064680" target="_blank" title="واتساپ">
+            <i class="fab fa-whatsapp"></i>
+        </a>
+        <a href="https://t.me/masidesigner555" target="_blank" title="تلگرام">
+            <i class="fab fa-telegram"></i>
+        </a>
+        <a href="https://ble.ir/YourID" target="_blank" title="بله">
+            <i class="fas fa-comment-dots"></i>
+        </a>
+        <a href="https://instagram.com/YourID" target="_blank" title="اینستاگرام">
+            <i class="fab fa-instagram"></i>
+        </a>
+        <a href="tel:09371064680" title="تماس تلفنی">
+            <i class="fas fa-phone"></i>
+        </a>
+    </div>
+
+    <p class="contact-footer">
+        <i class="fas fa-heart"></i>
+        منتظر تماس شما هستیم
+        <i class="fas fa-heart"></i>
+    </p>
+</section>
+
+<p class="seo-text">
+    <strong>طراحی سایت حرفه ای با </strong>  مناسب ترین هزینه . 
+    ما در <strong>گل رز وب</strong> با <strong>طراحی سایت اختصاصی</strong> و <strong>سئو شده</strong>، 
+    وب‌سایتی زیبا و ریسپانسیو برای شما می‌سازیم. 
+    اگر به دنبال <strong>بهترین قیمت طراحی سایت</strong> هستید، ما بهترین انتخاب شما هستیم.
+</p>
+
+    </main>
+
+    <!-- ========================================================== -->
+<!-- صفحه ۴: نمونه کارها (Portfolio)                          -->
+<!-- ========================================================== -->
+<section id="page-portfolio" class="page">
+    <div class="container">
+        <div class="section-header">
+            <span class="section-tag">نمونه کارها</span>
+            <h2>آخرین پروژه‌های من</h2>
+            <p>چند نمونه از سایت‌هایی که طراحی کردم</p>
+        </div>
+
+        <div class="portfolio-grid">
+            <!-- نمونه کار ۱ -->
+            <div class="portfolio-item">
+                <div class="portfolio-image">
+                    <img src="wo.jpg" alt="نمونه سایت شرکتی">
+                    <div class="portfolio-overlay">
+                        <h4>سایت شرکتی</h4>
+                        <p>طراحی شده با HTML/CSS/js </p>
+                        <a href="#" class="portfolio-link">مشاهده <i class="fas fa-arrow-left"></i></a>
+                    </div>
+                </div>
+            </div>
+
+            <!-- نمونه کار ۲ -->
+            <div class="portfolio-item">
+                <div class="portfolio-image">
+                    <img src="to.jpg" alt="نمونه سایت فروشگاهی">
+                    <div class="portfolio-overlay">
+                        <h4>سایت فروشگاهی</h4>
+                        <p>طراحی شده با HTML/CSS/JS</p>
+                        <a href="#" class="portfolio-link">مشاهده <i class="fas fa-arrow-left"></i></a>
+                    </div>
+                </div>
+            </div>
+
+            <!-- نمونه کار ۳ -->
+            <div class="portfolio-item">
+                <div class="portfolio-image">
+                    <img src="ro.jpg" alt="نمونه سایت لوکس">
+                    <div class="portfolio-overlay">
+                        <h4>سایت لوکس</h4>
+                        <p>طراحی اختصاصی با انیمیشن
+                            html/ css/ js </html>
+                        </p>
+                        <a href="#" class="portfolio-link">مشاهده <i class="fas fa-arrow-left"></i></a>
+                    </div>
+                </div>
+            </div>
+
+            <!-- نمونه کار ۴ -->
+            <div class="portfolio-item">
+                <div class="portfolio-image">
+                    <img src="go.jpg" alt="نمونه سایت شخصی">
+                    <div class="portfolio-overlay">
+                        <h4>سایت شخصی</h4>
+                        <p>طراحی شده با CSS / html / javascript مدرن</p>
+                        <a href="#" class="portfolio-link">مشاهده <i class="fas fa-arrow-left"></i></a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+    <!-- ========================================================== -->
+    <!-- FOOTER (پاورقی)                                           -->
+    <!-- ========================================================== -->
+    <footer class="footer">
+        <p>© 2026 گل رز وب | طراحی سایت مطابق سلیقه شما| کلیه حقوق برای گل رز وب محفوظ است</p>
+        <p class="footer-heart">
+            طراحی شده با <i class="fas fa-heart"></i> براق و   خاص
+        </p>
+
+        <div class="footer-logo">
+            <img src="logo.png" alt="گل رز وب" width="40">
+            <span>گل رز وب</span>
+        </div>
+    </footer>
+
+</div>
+
+<!-- ========================================================== -->
+<!-- مودال اطلاعات تماس                                         -->
+<!-- ========================================================== -->
+<div id="contactModal" class="modal">
+    <div class="modal-content">
+        <h2><i class="fas fa-user-circle"></i> اطلاعات تماس</h2>
+        <p id="modalInfo">
+            <i class="fas fa-phone"></i> ۰۹۳۷۱۰۶۴۶۸۰
+        </p>
+        <button class="close-modal" onclick="closeModal()">بستن</button>
+    </div>
+</div>
+
+<script src="script.js"></script>
+</body>
+</html>

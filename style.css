@@ -1,0 +1,1808 @@
+/* ================================================================ */
+/* تنظیمات پایه                                                   */
+/* ================================================================ */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Poppins', 'Segoe UI', sans-serif;
+}
+
+body {
+    background: linear-gradient(145deg, #ffe6f0, #ffccdf);
+    min-height: 100vh;
+    padding: 15px;
+    animation: sparkleBg 10s infinite alternate;
+}
+
+@keyframes sparkleBg {
+    0% { background: linear-gradient(145deg, #ffe6f0, #ffb3cc); }
+    100% { background: linear-gradient(145deg, #ffd9e6, #ff99bb); }
+}
+
+/* ================================================================ */
+/* کانتینر اصلی                                                   */
+/* ================================================================ */
+.container {
+    max-width: 1300px;
+    margin: 0 auto;
+    background: rgba(255, 240, 245, 0.4);
+    backdrop-filter: blur(12px);
+    border-radius: 50px;
+    padding: 25px 30px 30px;
+    box-shadow: 0 30px 60px rgba(255, 20, 100, 0.3),
+                0 0 0 2px #ff99bb inset,
+                0 0 30px #ff66aa;
+    border: 1px solid rgba(255, 255, 255, 0.5);
+}
+
+/* ================================================================ */
+/* HEADER - کاملاً افقی و مرتب                                    */
+/* ================================================================ */
+.header {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    flex-wrap: wrap;
+    padding: 10px 0 15px;
+    border-bottom: 2px solid #ff80b0;
+    gap: 15px;
+}
+
+/* لوگو */
+.logo-area {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    flex-shrink: 0;
+}
+
+.logo-place {
+    width: 55px;
+    height: 55px;
+    background: #ff99bb;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    box-shadow: 0 0 20px #ff66aa;
+    border: 3px solid white;
+    overflow: hidden;
+    flex-shrink: 0;
+}
+
+.logo-place i {
+    font-size: 30px;
+    color: white;
+    text-shadow: 0 0 15px #ff3388;
+}
+
+.logo-text {
+    font-size: 1.4rem;
+    font-weight: 900;
+    color: #a6004d;
+    text-shadow: 0 0 20px #ff66aa;
+    white-space: nowrap;
+}
+.logo-place img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    display: block;
+}
+
+/* ناوبری اصلی (وسط) */
+.main-nav {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    flex-wrap: wrap;
+    flex: 1;
+    justify-content: center;
+}
+
+.main-nav a {
+    text-decoration: none;
+    color: #5e0030;
+    font-weight: 600;
+    font-size: 14px;
+    padding: 8px 16px;
+    border-radius: 40px;
+    transition: 0.3s;
+    border: 2px solid transparent;
+    display: flex;
+    align-items: center;
+    gap: 6px;
+    white-space: nowrap;
+}
+
+.main-nav a i {
+    font-size: 15px;
+    color: #cc0066;
+}
+
+.main-nav a:hover {
+    background: #ffb3cc;
+    transform: translateY(-2px);
+    box-shadow: 0 0 25px #ff66aa;
+    border-color: #ff66aa;
+}
+
+.main-nav a.active {
+    background: #ff3388;
+    color: white;
+    border-color: #ff3388;
+    box-shadow: 0 0 30px #ff3388;
+}
+
+.main-nav a.active i {
+    color: white;
+}
+
+/* بخش راست (جستجو + همبرگر) */
+.header-left {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    flex-shrink: 0;
+}
+
+.search-box {
+    display: flex;
+    align-items: center;
+    background: white;
+    border-radius: 50px;
+    padding: 4px 14px;
+    box-shadow: 0 0 15px #ff80b0;
+    border: 1px solid #ff66aa;
+}
+
+.search-box input {
+    border: none;
+    padding: 6px 8px;
+    border-radius: 50px;
+    outline: none;
+    background: transparent;
+    font-size: 13px;
+    width: 120px;
+}
+
+.search-box i {
+    color: #d63384;
+    font-size: 16px;
+    cursor: pointer;
+}
+
+/* همبرگر */
+.hamburger-menu {
+    position: relative;
+    display: inline-block;
+}
+
+.hamburger-icon {
+    font-size: 26px;
+    color: #b3005e;
+    cursor: pointer;
+    background: rgba(255, 255, 255, 0.6);
+    padding: 5px 12px;
+    border-radius: 40px;
+    box-shadow: 0 0 15px #ff66aa;
+    transition: 0.3s;
+}
+
+.hamburger-icon:hover {
+    transform: scale(1.05);
+    background: #ffccdd;
+}
+
+.dropdown-content {
+    display: none;
+    position: absolute;
+    left: 0;
+    top: 50px;
+    background: rgba(255, 240, 248, 0.98);
+    backdrop-filter: blur(12px);
+    min-width: 200px;
+    border-radius: 25px;
+    padding: 15px 10px;
+    box-shadow: 0 20px 40px rgba(255, 0, 100, 0.4);
+    border: 2px solid #ff80b0;
+    z-index: 999;
+}
+
+.hamburger-menu:hover .dropdown-content {
+    display: block;
+}
+
+.dropdown-content a {
+    display: block;
+    padding: 10px 18px;
+    color: #8a0047;
+    text-decoration: none;
+    font-weight: bold;
+    border-radius: 40px;
+    transition: 0.3s;
+    font-size: 14px;
+    border-bottom: 1px solid #ffc1d4;
+}
+
+.dropdown-content a i {
+    margin-left: 10px;
+    color: #cc3377;
+}
+
+.dropdown-content a:hover {
+    background: #ffb3cc;
+    transform: translateX(8px);
+    box-shadow: 0 0 20px #ff66aa;
+}
+
+/* ================================================================ */
+/* MAIN - محتوای اصلی (مرکز)                                     */
+/* ================================================================ */
+.main-content {
+    max-width: 1200px;
+    margin: 20px auto 10px;
+    padding: 15px;
+    background: rgba(255, 240, 245, 0.2);
+    border-radius: 40px;
+    min-height: 400px;
+}
+
+/* ================================================================ */
+/* صفحات                                                          */
+/* ================================================================ */
+.page {
+    display: none;
+    animation: fadePage 0.5s ease;
+}
+
+.page.active {
+    display: block;
+}
+
+@keyframes fadePage {
+    0% { opacity: 0; transform: translateY(20px); }
+    100% { opacity: 1; transform: translateY(0); }
+}
+
+/* ================================================================ */
+/* صفحه خانه (Hero)                                               */
+/* ================================================================ */
+.hero {
+    text-align: center;
+    padding: 20px 10px;
+    background: #fc549a;
+    border-radius: 40px;
+}
+
+.hero h1 {
+    font-size: 2.8rem;
+    font-weight: 900;
+    color: #a6004d;
+    text-shadow: 0 0 30px #ff66aa, 0 0 60px #ff3388;
+    margin-bottom: 20px;
+}
+
+.main-text {
+    font-size: 1.3rem;
+    line-height: 2.2rem;
+    color: #5e0030;
+    background: #f1bad1;
+    padding: 30px 35px;
+    border-radius: 60px;
+    box-shadow: 0 10px 40px #ff66aa;
+    border: 2px solid #ff99bb;
+    max-width: 850px;
+    margin: 15px auto;
+    font-weight: 600;
+}
+
+.main-text strong {
+    color: #cc0066;
+    font-size: 1.6rem;
+    background: linear-gradient(45deg, #cc0066, #ff3388);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+}
+
+.badge {
+    background: #ff3388;
+    color: white;
+    padding: 5px 18px;
+    border-radius: 60px;
+    display: inline-block;
+    margin-top: 10px;
+}
+
+.badge i {
+    margin-left: 8px;
+}
+
+.main-text small {
+    font-weight: 300;
+    color: #5e0030;
+    -webkit-text-fill-color: #5e0030;
+}
+
+.price-tag {
+    background: #ff3388;
+    color: white;
+    padding: 12px 35px;
+    border-radius: 60px;
+    display: inline-block;
+    font-size: 1.6rem;
+    font-weight: 800;
+    box-shadow: 0 0 50px #ff3388;
+    margin-top: 15px;
+}
+
+.price-tag i {
+    margin-left: 10px;
+}
+
+/* ===== ۴ جای عکس (مرکز) ===== */
+.image-slots {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 25px;
+    flex-wrap: wrap;
+    margin: 35px 0 20px;
+}
+
+.img-placeholder {
+    width: 170px;
+    height: 170px;
+    background: #ffb3cc;
+    border-radius: 35px;
+    box-shadow: 0 0 40px #ff66aa;
+    border: 4px solid white;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: 5px;
+    transition: 0.3s;
+    cursor: pointer;
+    background-image: url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100" fill="%23ff88aa"><circle cx="50" cy="50" r="40" /></svg>');
+    background-size: cover;
+    background-blend-mode: overlay;
+    flex-shrink: 0;
+    overflow: hidden;
+}
+
+.img-placeholder:hover {
+    transform: scale(1.05) rotate(2deg);
+    box-shadow: 0 0 80px #ff3388;
+}
+
+.img-placeholder i {
+    font-size: 40px;
+    color: white;
+    text-shadow: 0 0 20px #cc0066;
+}
+
+.img-placeholder span {
+    color: white;
+    font-weight: bold;
+    text-shadow: 0 0 10px #cc0066;
+    background: rgba(0,0,0,0.2);
+    padding: 2px 12px;
+    border-radius: 20px;
+    font-size: 12px;
+}
+
+/* ===== استایل عکس داخل باکس ===== */
+.img-placeholder img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    display: block;
+}
+
+/* ===== اگر عکس ندارید، آیکون پیش‌فرض ===== */
+.img-placeholder i {
+    display: none;
+}
+
+.img-placeholder span {
+    display: none;
+}
+
+.hero-footer {
+    font-size: 1.1rem;
+    color: #660033;
+    background: rgba(255, 255, 240, 0.5);
+    padding: 12px;
+    border-radius: 50px;
+    max-width: 500px;
+    margin: 10px auto;
+}
+
+.hero-footer i {
+    color: #ff3388;
+    margin: 0 8px;
+}
+
+/* ================================================================ */
+/* صفحه خدمات                                                     */
+/* ================================================================ */
+.page-title {
+    text-align: center;
+    color: #a6004d;
+    font-size: 2.5rem;
+    margin: 15px 0 25px;
+    text-shadow: 0 0 30px #ff66aa;
+}
+
+.intro-box {
+    background: rgba(255, 255, 255, 0.6);
+    backdrop-filter: blur(8px);
+    border-radius: 50px;
+    padding: 25px 35px;
+    text-align: center;
+    border: 2px solid #ff99bb;
+    box-shadow: 0 0 40px #ff66aa;
+    margin-bottom: 30px;
+}
+
+.intro-box h3 {
+    font-size: 1.8rem;
+    color: #a6004d;
+    margin-bottom: 10px;
+}
+
+.intro-box p {
+    font-size: 1.1rem;
+    line-height: 1.9rem;
+    color: #4a0020;
+    max-width: 750px;
+    margin: 0 auto 15px;
+}
+
+.intro-box p strong {
+    color: #cc0066;
+}
+
+.intro-features {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 15px;
+}
+
+.intro-features span {
+    background: #ff3388;
+    color: white;
+    padding: 6px 18px;
+    border-radius: 50px;
+    font-weight: bold;
+    font-size: 0.9rem;
+    box-shadow: 0 0 20px #ff3388;
+}
+
+.intro-features span i {
+    margin-left: 8px;
+}
+
+/* کارت‌های خدمات */
+.service-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+    gap: 25px;
+    margin: 25px 0;
+}
+
+.service-card {
+    background: rgba(255, 255, 255, 0.6);
+    backdrop-filter: blur(6px);
+    border-radius: 45px;
+    padding: 30px 20px;
+    text-align: center;
+    box-shadow: 0 0 30px #ff66aa;
+    border: 2px solid #ff99bb;
+    transition: 0.4s;
+}
+
+.service-card:hover {
+    transform: translateY(-10px);
+    box-shadow: 0 0 60px #ff3388;
+}
+
+.service-card i {
+    font-size: 45px;
+    color: #cc0066;
+    margin-bottom: 10px;
+}
+
+.service-card h3 {
+    color: #5e0030;
+    font-size: 1.4rem;
+}
+
+.service-card p {
+    color: #33001a;
+    font-weight: 500;
+    font-size: 0.95rem;
+    margin: 5px 0;
+}
+
+.service-price {
+    background: #ff3388;
+    color: white;
+    padding: 4px 18px;
+    border-radius: 40px;
+    font-weight: 800;
+    font-size: 1rem;
+    display: inline-block;
+    margin: 8px 0;
+    box-shadow: 0 0 20px #ff3388;
+}
+
+.service-btn {
+    background: #ff3388;
+    color: white !important;
+    text-decoration: none;
+    padding: 10px 25px;
+    border-radius: 50px;
+    font-weight: 700;
+    font-size: 0.95rem;
+    display: inline-block;
+    margin-top: 8px;
+    transition: 0.3s;
+    border: none;
+    box-shadow: 0 0 20px #ff3388;
+}
+
+.service-btn:hover {
+    transform: scale(1.05);
+    box-shadow: 0 0 40px #ff3388;
+    background: #cc0066;
+}
+
+/* CTA */
+.cta-section {
+    text-align: center;
+    padding: 25px;
+    margin: 25px 0;
+    background: linear-gradient(135deg, #ff3388, #cc0066);
+    border-radius: 50px;
+    box-shadow: 0 0 60px #ff3388;
+}
+
+.cta-section p {
+    font-size: 1.4rem;
+    color: white;
+    font-weight: 700;
+    margin-bottom: 15px;
+}
+
+.cta-section p i {
+    color: #ffd700;
+    margin: 0 10px;
+}
+
+.cta-btn {
+    background: white;
+    color: #cc0066 !important;
+    text-decoration: none;
+    padding: 14px 40px;
+    border-radius: 50px;
+    font-size: 1.2rem;
+    font-weight: 800;
+    display: inline-block;
+    transition: 0.3s;
+    box-shadow: 0 0 30px rgba(255, 255, 255, 0.3);
+}
+
+.cta-btn:hover {
+    transform: scale(1.08);
+    box-shadow: 0 0 60px rgba(255, 255, 255, 0.5);
+}
+
+/* ================================================================ */
+/* صفحه تماس                                                     */
+/* ================================================================ */
+.contact-info {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 20px;
+    padding: 15px 0 25px;
+}
+
+.contact-btn {
+    background: white;
+    padding: 15px 30px;
+    border-radius: 60px;
+    text-decoration: none;
+    color: #99004d;
+    font-weight: 700;
+    font-size: 1.1rem;
+    box-shadow: 0 0 30px #ff66aa;
+    border: 2px solid #ff99bb;
+    transition: 0.3s;
+    display: inline-flex;
+    align-items: center;
+    gap: 10px;
+    min-width: 150px;
+    justify-content: center;
+}
+
+.contact-btn i {
+    font-size: 26px;
+    color: #cc0066;
+}
+
+.contact-btn:hover {
+    background: #ff3388;
+    color: white;
+    transform: scale(1.05);
+    box-shadow: 0 0 60px #ff3388;
+}
+
+.contact-btn.whatsapp:hover { background: #25D366; border-color: #25D366; }
+.contact-btn.telegram:hover { background: #0088cc; border-color: #0088cc; }
+.contact-btn.bale:hover { background: #2b7baf; border-color: #2b7baf; }
+
+.contact-details {
+    background: rgba(255, 255, 255, 0.6);
+    backdrop-filter: blur(6px);
+    border-radius: 45px;
+    padding: 25px 35px;
+    max-width: 550px;
+    margin: 15px auto;
+    border: 2px solid #ff99bb;
+    box-shadow: 0 0 30px #ff66aa;
+}
+
+.contact-details h3 {
+    text-align: center;
+    color: #a6004d;
+    font-size: 1.6rem;
+    margin-bottom: 15px;
+}
+
+.detail-item {
+    display: flex;
+    align-items: center;
+    gap: 15px;
+    padding: 10px 18px;
+    background: white;
+    border-radius: 40px;
+    margin: 8px 0;
+    box-shadow: 0 0 15px #ffc1d4;
+    transition: 0.3s;
+}
+
+.detail-item:hover {
+    transform: translateX(8px);
+    box-shadow: 0 0 30px #ff66aa;
+}
+
+.detail-item i {
+    font-size: 22px;
+    color: #ff3388;
+    width: 35px;
+    text-align: center;
+}
+
+.detail-item span {
+    font-size: 1rem;
+    color: #4a0020;
+    font-weight: 500;
+}
+
+.contact-footer {
+    text-align: center;
+    font-size: 1.1rem;
+    background: rgba(255, 255, 255, 0.4);
+    padding: 12px;
+    border-radius: 50px;
+    max-width: 400px;
+    margin: 15px auto;
+}
+
+.contact-footer i {
+    color: #ff3388;
+    margin: 0 8px;
+}
+
+/* ================================================================ */
+/* FOOTER - پاورقی (کاملاً مشخص)                                 */
+/* ================================================================ */
+.footer {
+    margin-top: 30px;
+    padding-top: 20px;
+    text-align: center;
+    color: #4d0026;
+    border-top: 2px solid #ff80b0;
+    font-weight: 500;
+}
+
+.footer-heart {
+    font-size: 0.9rem;
+    opacity: 0.8;
+    margin-top: 5px;
+}
+
+.footer-heart i {
+    color: #ff3388;
+}
+
+/* ================================================================ */
+/* مودال                                                          */
+/* ================================================================ */
+.modal {
+    display: none;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.5);
+    backdrop-filter: blur(8px);
+    align-items: center;
+    justify-content: center;
+    z-index: 9999;
+}
+
+.modal-content {
+    background: linear-gradient(145deg, #ffe6f0, #ffccdf);
+    padding: 35px 45px;
+    border-radius: 70px;
+    max-width: 450px;
+    width: 90%;
+    text-align: center;
+    box-shadow: 0 0 80px #ff3388;
+    border: 4px solid #ff99bb;
+    animation: popIn 0.4s ease;
+}
+
+@keyframes popIn {
+    0% { transform: scale(0.5); opacity: 0; }
+    100% { transform: scale(1); opacity: 1; }
+}
+
+.modal-content h2 {
+    color: #a6004d;
+    font-size: 2.2rem;
+    margin-bottom: 15px;
+}
+
+.modal-content h2 i {
+    color: #ff3388;
+}
+
+.modal-content #modalInfo {
+    font-size: 1.3rem;
+    color: #4a0020;
+    background: white;
+    padding: 18px;
+    border-radius: 50px;
+    margin: 12px 0;
+    box-shadow: 0 0 30px #ff66aa;
+    border: 2px solid #ff99bb;
+}
+
+.modal-content #modalInfo i {
+    color: #cc0066;
+    margin-left: 10px;
+}
+
+.close-modal {
+    background: #ff3388;
+    border: none;
+    color: white;
+    font-size: 1.5rem;
+    padding: 10px 40px;
+    border-radius: 50px;
+    margin-top: 15px;
+    cursor: pointer;
+    font-weight: bold;
+    transition: 0.3s;
+    box-shadow: 0 0 30px #ff3388;
+}
+
+.close-modal:hover {
+    transform: scale(1.05);
+    box-shadow: 0 0 60px #ff3388;
+}
+
+/* ================================================================ */
+/* دکمه‌های شبکه‌های اجتماعی - استایل جدید                      */
+/* ================================================================ */
+
+/* واتساپ */
+.contact-btn.whatsapp {
+    background: #25D366;
+    color: white;
+    border-color: #25D366;
+}
+.contact-btn.whatsapp i {
+    color: white;
+}
+.contact-btn.whatsapp:hover {
+    background: #1da851;
+    transform: scale(1.05);
+    box-shadow: 0 0 40px #25D366;
+}
+
+/* تلگرام */
+.contact-btn.telegram {
+    background: #0088cc;
+    color: white;
+    border-color: #0088cc;
+}
+.contact-btn.telegram i {
+    color: white;
+}
+.contact-btn.telegram:hover {
+    background: #006699;
+    transform: scale(1.05);
+    box-shadow: 0 0 40px #0088cc;
+}
+
+/* بله */
+.contact-btn.bale {
+    background: #2b7baf;
+    color: white;
+    border-color: #2b7baf;
+}
+.contact-btn.bale i {
+    color: white;
+}
+.contact-btn.bale:hover {
+    background: #1f5f8a;
+    transform: scale(1.05);
+    box-shadow: 0 0 40px #2b7baf;
+}
+
+/* اینستاگرام */
+.contact-btn.instagram {
+    background: linear-gradient(45deg, #f09433, #e6683c, #dc2743, #cc2366, #bc1888);
+    color: white;
+    border-color: #dc2743;
+}
+.contact-btn.instagram i {
+    color: white;
+}
+.contact-btn.instagram:hover {
+    transform: scale(1.05);
+    box-shadow: 0 0 40px #dc2743;
+}
+
+/* تماس تلفنی */
+.contact-btn.phone {
+    background: #ff3388;
+    color: white;
+    border-color: #ff3388;
+}
+.contact-btn.phone i {
+    color: white;
+}
+.contact-btn.phone:hover {
+    background: #cc0066;
+    transform: scale(1.05);
+    box-shadow: 0 0 40px #ff3388;
+}
+
+/* ================================================================ */
+/* لینک‌های شبکه‌های اجتماعی در پایین صفحه                       */
+/* ================================================================ */
+.social-links-footer {
+    display: flex;
+    justify-content: center;
+    gap: 15px;
+    margin: 25px 0 15px;
+    flex-wrap: wrap;
+}
+
+.social-links-footer a {
+    width: 50px;
+    height: 50px;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 22px;
+    color: white;
+    text-decoration: none;
+    transition: 0.3s;
+    box-shadow: 0 0 20px rgba(255, 51, 136, 0.2);
+}
+
+.social-links-footer a:hover {
+    transform: translateY(-5px) scale(1.1);
+}
+
+/* رنگ‌های هر شبکه در بخش پایین */
+.social-links-footer a:nth-child(1) { background: #25D366; } /* واتساپ */
+.social-links-footer a:nth-child(2) { background: #0088cc; } /* تلگرام */
+.social-links-footer a:nth-child(3) { background: #2b7baf; } /* بله */
+.social-links-footer a:nth-child(4) { 
+    background: linear-gradient(45deg, #f09433, #e6683c, #dc2743, #cc2366, #bc1888);
+} /* اینستاگرام */
+.social-links-footer a:nth-child(5) { background: #ff3388; } /* تلفن */
+
+/* ================================================================ */
+/* استایل‌های جدید برای متن‌های صفحه اول                          */
+/* ================================================================ */
+
+/* تیتر اصلی بنفش براق */
+.main-title {
+    font-size: 2.2rem;
+    font-weight: 900;
+    color: #6a0dad;
+    text-shadow: 0 0 30px #8b00ff, 0 0 60px #6a0dad;
+    margin-bottom: 10px;
+    background: linear-gradient(135deg, #ff3388, #8b00ff, #a855f7);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    text-shadow: 0 0 40px rgba(141, 43, 233, 0.3);
+}
+
+.sub-title {
+    font-size: 1.4rem;
+    color: #6a0dad;
+    font-weight: 700;
+    margin-bottom: 20px;
+    -webkit-text-fill-color: #6a0dad;
+    text-shadow: 0 0 20px rgba(138, 43, 226, 0.2);
+}
+
+/* لیست مزایا */
+.benefits-list {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 10px 20px;
+    margin: 15px 0;
+    text-align: right;
+}
+
+.benefits-list span {
+    color: #ff056d;
+    font-weight: 500;
+    font-size: 0.95rem;
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    padding: 6px 12px;
+    background: rgb(250, 114, 250);
+    border-radius: 30px;
+    border-right: 3px solid #8b00ff;
+}
+
+.benefits-list span i {
+    color: #8b00ff;
+    font-size: 16px;
+}
+
+/* متن هایلایت شده (با جدیدترین روش‌ها) */
+.highlight-text {
+    font-size: 1.2rem;
+    color: #fa1072;
+    background: linear-gradient(135deg, #daabfc, #c07bf8);
+    padding: 18px 25px;
+    border-radius: 50px;
+    border: 5px solid #8b00ff;
+    box-shadow: 0 0 40px rgba(138, 43, 226, 0.15);
+    margin: 20px 0;
+    font-weight: 600;
+}
+
+.highlight-text i {
+    color: #8b00ff;
+    margin: 0 10px;
+}
+
+.highlight-text strong {
+    color: #6a0dad;
+    font-weight: 900;
+    -webkit-text-fill-color: #6a0dad;
+    text-shadow: 0 0 20px rgba(138, 43, 226, 0.3);
+}
+
+/* جدول قیمت‌ها */
+.price-table {
+    background: rgba(72, 240, 147, 0.5);
+    backdrop-filter: blur(4px);
+    border-radius: 30px;
+    padding: 20px 25px;
+    margin: 20px 0;
+    border: 2px solid #8b00ff;
+    box-shadow: 0 0 40px rgba(138, 43, 226, 0.1);
+}
+
+.price-table h3 {
+    color: #6a0dad;
+    font-size: 1.4rem;
+    margin-bottom: 15px;
+    text-align: center;
+}
+
+.price-table table {
+    width: 100%;
+    border-collapse: collapse;
+    text-align: right;
+}
+
+.price-table th {
+    background: rgba(138, 43, 226, 0.1);
+    color: #6a0dad;
+    padding: 10px 12px;
+    font-weight: 700;
+    border-bottom: 2px solid #8b00ff;
+}
+
+.price-table td {
+    padding: 10px 12px;
+    border-bottom: 1px solid rgba(138, 43, 226, 0.1);
+    color: #3a002a;
+}
+
+.price-table tr:hover td {
+    background: rgba(138, 43, 226, 0.03);
+}
+
+.price-highlight {
+    color: #6a0dad;
+    font-weight: 800;
+    font-size: 1.05rem;
+    -webkit-text-fill-color: #6a0dad;
+    text-shadow: 0 0 20px rgba(138, 43, 226, 0.15);
+}
+
+.table-note {
+    text-align: center;
+    color: #5a0040;
+    font-size: 0.9rem;
+    margin-top: 12px;
+    font-weight: 500;
+}
+
+.table-note i {
+    color: #8b00ff;
+}
+
+/* هزینه‌های سالانه */
+.annual-costs {
+    background: #f589da;
+    border-radius: 30px;
+    padding: 18px 25px;
+    margin: 15px 0;
+    border: 1px solid rgba(138, 43, 226, 0.15);
+}
+
+.annual-costs h3 {
+    color: #6a0dad;
+    font-size: 1.2rem;
+    margin-bottom: 10px;
+}
+
+.annual-costs ul {
+    list-style: none;
+    padding: 0;
+}
+
+.annual-costs ul li {
+    padding: 6px 0;
+    color: #3a002a;
+    font-weight: 500;
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+
+.annual-costs ul li i {
+    color: #8b00ff;
+    width: 22px;
+}
+
+.annual-costs .note {
+    color: #5a0040;
+    font-size: 0.9rem;
+    margin-top: 8px;
+    background: rgba(138, 43, 226, 0.05);
+    padding: 8px 15px;
+    border-radius: 30px;
+    border-right: 3px solid #8b00ff;
+}
+
+/* چرا من؟ */
+.why-me {
+    background: linear-gradient(135deg, #d9a3ff, #b563f8);
+    backdrop-filter: blur(4px);
+    border-radius: 30px;
+    padding: 20px 25px;
+    margin: 15px 0;
+    border: 2px solid #8b00ff;
+    box-shadow: 0 0 30px rgba(138, 43, 226, 0.08);
+}
+
+.why-me h3 {
+    color: #6a0dad;
+    font-size: 1.4rem;
+    margin-bottom: 12px;
+    text-align: center;
+}
+
+.why-me ul {
+    list-style: none;
+    padding: 0;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 8px 20px;
+}
+
+.why-me ul li {
+    padding: 6px 0;
+    color: #3a002a;
+    font-weight: 500;
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    font-size: 0.95rem;
+}
+
+.why-me ul li i {
+    color: #8b00ff;
+    font-size: 16px;
+}
+
+/* دعوت به اقدام نهایی */
+.cta-final {
+    background: linear-gradient(135deg, #c58feb, #a74cf1);
+    border-radius: 40px;
+    padding: 25px 30px;
+    margin: 25px 0 10px;
+    text-align: center;
+    box-shadow: 0 0 60px rgba(197, 145, 245, 0.3);
+}
+
+.cta-final p {
+    font-size: 1.5rem;
+    color: rgb(77, 233, 225);
+    font-weight: 800;
+    margin-bottom: 15px;
+}
+
+.cta-final p i {
+    color: #ffd700;
+    margin: 0 10px;
+}
+
+.cta-contacts {
+    display: flex;
+    justify-content: center;
+    gap: 15px;
+    flex-wrap: wrap;
+}
+
+.cta-contact-btn {
+    background: #ff3388;
+    color: #6a0dad !important;
+    text-decoration: none;
+    padding: 12px 25px;
+    border-radius: 50px;
+    font-weight: 700;
+    font-size: 1rem;
+    transition: 0.3s;
+    display: inline-flex;
+    align-items: center;
+    gap: 10px;
+    box-shadow: 0 0 30px rgba(255, 255, 255, 0.2);
+}
+
+.cta-contact-btn:hover {
+    transform: scale(1.08);
+    box-shadow: 0 0 50px rgba(255, 255, 255, 0.4);
+    background: #f5f0ff;
+}
+
+.cta-contact-btn i {
+    color: #6a0dad;
+}
+/* ===== دکمه واتساپ در صفحه اصلی ===== */
+.whatsapp-btn {
+    background: #25D366 !important;
+    color: white !important;
+    border: none !important;
+    padding: 15px 40px !important;
+    font-size: 1.2rem !important;
+    border-radius: 50px !important;
+    box-shadow: 0 0 40px rgba(37, 211, 102, 0.4) !important;
+}
+
+.whatsapp-btn:hover {
+    transform: scale(1.08) !important;
+    box-shadow: 0 0 60px rgba(37, 211, 102, 0.6) !important;
+    background: #1da851 !important;
+}
+
+.whatsapp-btn i {
+    color: white !important;
+    font-size: 28px !important;
+}
+/* ================================================================ */
+/* ۴ عکس کوچک تزئینی زیر هدر                                      */
+/* ================================================================ */
+.decorative-images {
+    padding: 15px 0 5px;
+    background: transparent;
+}
+
+.deco-grid {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 30px;
+    flex-wrap: wrap;
+}
+
+.deco-item {
+    width: 120px;
+    height: 120px;
+    border-radius: 25px;
+    overflow: hidden;
+    border: 3px solid rgba(255, 51, 136, 0.3);
+    box-shadow: 0 0 20px rgba(255, 51, 136, 0.15);
+    transition: 0.4s;
+    cursor: pointer;
+    flex-shrink: 0;
+}
+
+.deco-item:hover {
+    transform: scale(1.1) rotate(5deg);
+    border-color: #ff3388;
+    box-shadow: 0 0 40px rgba(255, 51, 136, 0.3);
+}
+
+.deco-item img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    display: block;
+}
+
+
+
+.page:not(#page-home) {
+    padding-top: 5px !important;
+}
+
+#page-services,
+#page-contact {
+    padding-top: 5px !important;
+    margin-top: 0 !important;
+}
+
+#page-services .page-title,
+#page-contact .page-title {
+    margin-top: 0 !important;
+}
+#page-services,
+#page-contact {
+    min-height: 60vh;
+}
+
+
+/* ================================================================ */
+/* نمونه کارها                                                     */
+/* ================================================================ */
+.portfolio-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 35px !important; 
+    margin-top: 20px;
+}
+
+.portfolio-item {
+    border-radius: 20px;
+    overflow: hidden;
+    border: 1px solid rgba(255, 51, 136, 0.2);
+    transition: 0.4s;
+    background: rgba(255, 255, 255, 0.05);
+    margin-bottom: 30px !important;  /* فاصله پایین هر کارت */
+}
+
+.portfolio-item:hover {
+    transform: translateY(-8px);
+    border-color: #ff3388;
+    box-shadow: 0 20px 60px rgba(255, 51, 136, 0.2);
+}
+
+.portfolio-image {
+    position: relative;
+    height: 220px;
+    overflow: hidden;
+}
+
+.portfolio-image img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    display: block;
+}
+
+.portfolio-overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(10, 10, 26, 0.85);
+    backdrop-filter: blur(6px);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    opacity: 0;
+    transition: 0.4s;
+    padding: 20px;
+    text-align: center;
+}
+
+.portfolio-item:hover .portfolio-overlay {
+    opacity: 1;
+}
+
+.portfolio-overlay h4 {
+    color: white;
+    font-size: 1.1rem;
+    margin-bottom: 5px;
+}
+
+.portfolio-overlay p {
+    color: #aaa;
+    font-size: 0.9rem;
+    margin-bottom: 12px;
+}
+
+.portfolio-link {
+    color: #ff3388;
+    text-decoration: none;
+    font-weight: 600;
+    display: inline-flex;
+    align-items: center;
+    gap: 6px;
+    transition: 0.3s;
+}
+
+.portfolio-link:hover {
+    gap: 12px;
+}
+
+.section-header {
+    margin-bottom: 40px !important;  /* فاصله عنوان تا کارت‌ها */
+}
+
+/* ================================================================ */
+/* صورتی کردن صفحه نمونه کارها                                     */
+/* ================================================================ */
+
+/* پس‌زمینه صفحه نمونه کارها */
+#page-portfolio {
+    background: rgba(255, 220, 235, 0.15);
+    border-radius: 40px;
+    padding: 40px 20px;
+}
+
+.portfolio-grid {
+    gap: 35px !important;  /* فاصله بین کارت‌ها */
+}
+   
+/* عنوان صفحه */
+#page-portfolio .section-tag {
+    color: #ff3388 !important;
+    background: rgba(255, 51, 136, 0.15) !important;
+}
+
+#page-portfolio .section-header h2 {
+    color: #6a0dad !important;
+    text-shadow: 0 0 30px rgba(138, 43, 226, 0.2);
+}
+
+#page-portfolio .section-header p {
+    color: #5e0030 !important;
+}
+
+/* کارت‌های نمونه کار */
+#page-portfolio .portfolio-item {
+    background: rgba(255, 200, 220, 0.25) !important;
+    border: 2px solid rgba(255, 51, 136, 0.2) !important;
+    border-radius: 24px !important;
+    transition: 0.4s;
+}
+
+#page-portfolio .portfolio-item:hover {
+    border-color: #ff3388 !important;
+    box-shadow: 0 0 40px rgba(255, 51, 136, 0.2) !important;
+    transform: translateY(-8px);
+}
+
+/* روی کارت‌ها (هاور) */
+#page-portfolio .portfolio-overlay {
+    background: rgba(10, 10, 26, 0.7) !important;
+    backdrop-filter: blur(4px);
+}
+
+#page-portfolio .portfolio-overlay h4 {
+    color: white !important;
+}
+
+#page-portfolio .portfolio-overlay p {
+    color: #ffb3cc !important;
+}
+
+#page-portfolio .portfolio-link {
+    color: #ff3388 !important;
+}
+
+/* ===== ریسپانسیو ===== */
+@media (max-width: 550px) {
+    #page-portfolio {
+        padding: 10px 5px;
+    }
+}
+
+#page-portfolio .portfolio-item {
+    background: rgba(255, 182, 193, 0.3) !important;
+    border: 2px solid #ff99bb !important;
+}
+
+#page-portfolio .portfolio-item:hover {
+    background: rgba(255, 150, 200, 0.4) !important;
+    border-color: #ff3388 !important;
+}
+
+
+/* ===== تنظیمات کلی صفحه نمونه کارها ===== */
+#page-portfolio {
+    background: rgba(255, 220, 235, 0.2);
+    border-radius: 40px;
+    padding: 20px 15px;
+}
+
+#page-portfolio .section-header h2 {
+    background: linear-gradient(135deg, #6a0dad, #ff3388);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+}
+
+/* ===== فقط برای صفحه نمونه کارها ===== */
+#page-portfolio .section-tag {
+    margin-bottom: 15px !important;
+}
+
+#page-portfolio .section-header h2 {
+    margin-bottom: 12px !important;
+}
+
+#page-portfolio .section-header p {
+    margin-top: 8px !important;
+}
+
+
+.welcome-banner {
+    background: linear-gradient(135deg, #6a0dad, #ff3388);
+    color: white;
+    text-align: center;
+    padding: 15px 25px;
+    font-size: 1.3rem;
+    font-weight: 700;
+    border-radius: 60px;
+    max-width: 600px;
+    margin: 15px auto 10px;
+    box-shadow: 0 0 50px rgba(138, 43, 226, 0.3);
+    border: 2px solid rgba(255, 255, 255, 0.2);
+    position: relative;
+    transition: 0.5s ease;
+    animation: slideDown 0.6s ease;
+}
+
+.welcome-banner.hide {
+    opacity: 0;
+    transform: translateY(-30px);
+    display: none;
+}
+
+.close-welcome {
+    background: rgba(255,255,255,0.2);
+    border: none;
+    color: white;
+    font-size: 1.2rem;
+    border-radius: 50%;
+    width: 30px;
+    height: 30px;
+    cursor: pointer;
+    position: absolute;
+    left: 10px;
+    top: 50%;
+    transform: translateY(-50%);
+    transition: 0.3s;
+}
+
+.close-welcome:hover {
+    background: rgba(255,255,255,0.4);
+}
+
+@keyframes slideDown {
+    0% { opacity: 0; transform: translateY(-30px); }
+    100% { opacity: 1; transform: translateY(0); }
+}
+
+@keyframes glowPulse {
+    0% { box-shadow: 0 0 30px rgba(138, 43, 226, 0.3); }
+    100% { box-shadow: 0 0 70px rgba(255, 51, 136, 0.5); }
+}
+
+
+.seo-text {
+    font-size: 1.1rem;
+    line-height: 2rem;
+    color: #3a002a;
+    background: rgba(255, 200, 220, 0.2);
+    padding: 15px 25px;
+    border-radius: 30px;
+    border-right: 4px solid #8b00ff;
+    margin: 15px 0;
+}
+
+/* ================================================================ */
+/* ریسپانسیو برای موبایل                                          */
+/* ================================================================ */
+@media (max-width: 650px) {
+    .benefits-list {
+        grid-template-columns: 1fr;
+    }
+    
+    .why-me ul {
+        grid-template-columns: 1fr;
+    }
+    
+    .main-title {
+        font-size: 1.6rem;
+    }
+    
+    .sub-title {
+        font-size: 1.1rem;
+    }
+    
+    .highlight-text {
+        font-size: 1rem;
+        padding: 15px;
+    }
+    
+    .price-table table {
+        font-size: 0.85rem;
+    }
+    
+    .price-table th,
+    .price-table td {
+        padding: 6px 8px;
+    }
+    
+    .cta-final p {
+        font-size: 1.1rem;
+    }
+    
+    .cta-contact-btn {
+        font-size: 0.85rem;
+        padding: 10px 18px;
+    }
+    
+    .cta-contacts {
+        flex-direction: column;
+        align-items: center;
+    }
+}
+
+@media (max-width: 450px) {
+    .main-title {
+        font-size: 1.3rem;
+    }
+    
+    .price-table table {
+        font-size: 0.75rem;
+    }
+    
+    .price-table th,
+    .price-table td {
+        padding: 4px 6px;
+    }
+}
+
+/* ================================================================ */
+/* ریسپانسیو برای موبایل                                          */
+/* ================================================================ */
+@media (max-width: 550px) {
+    .contact-info {
+        flex-direction: column;
+        align-items: center;
+    }
+    
+    .contact-btn {
+        width: 80%;
+        justify-content: center;
+    }
+    
+    .social-links-footer a {
+        width: 42px;
+        height: 42px;
+        font-size: 18px;
+    }
+}
+
+/* ================================================================ */
+/* ریسپانسیو (موبایل)                                            */
+/* ================================================================ */
+@media (max-width: 850px) {
+    .header {
+        flex-direction: row;
+        flex-wrap: wrap;
+        justify-content: center;
+    }
+    
+    .main-nav {
+        order: 3;
+        width: 100%;
+        justify-content: center;
+        gap: 5px;
+        flex-wrap: wrap;
+    }
+    
+    .main-nav a {
+        font-size: 13px;
+        padding: 6px 12px;
+    }
+    
+    .hero h1 {
+        font-size: 2rem;
+    }
+    
+    .main-text {
+        font-size: 1.1rem;
+        padding: 20px;
+    }
+    
+    .main-text strong {
+        font-size: 1.3rem;
+    }
+    
+    .img-placeholder {
+        width: 130px;
+        height: 130px;
+    }
+    
+    .search-box input {
+        width: 100px;
+    }
+}
+
+@media (max-width: 550px) {
+    .container {
+        padding: 12px 15px;
+        border-radius: 30px;
+    }
+    
+    .logo-text {
+        font-size: 1rem;
+    }
+    
+    .logo-place {
+        width: 40px;
+        height: 40px;
+    }
+    
+    .logo-place i {
+        font-size: 22px;
+    }
+    
+    .main-nav a {
+        font-size: 11px;
+        padding: 5px 10px;
+    }
+    
+    .main-nav a i {
+        font-size: 12px;
+    }
+    
+    .hero h1 {
+        font-size: 1.5rem;
+    }
+    
+    .main-text {
+        font-size: 0.95rem;
+        line-height: 1.8rem;
+        padding: 15px;
+    }
+    
+    .main-text strong {
+        font-size: 1.1rem;
+    }
+    
+    .price-tag {
+        font-size: 1.1rem;
+        padding: 8px 20px;
+    }
+    
+    .img-placeholder {
+        width: 100px;
+        height: 100px;
+    }
+    
+    .img-placeholder i {
+        font-size: 30px;
+    }
+    
+    .img-placeholder span {
+        font-size: 10px;
+    }
+    
+    .service-grid {
+        grid-template-columns: 1fr;
+    }
+    
+    .contact-btn {
+        font-size: 0.95rem;
+        padding: 12px 20px;
+        min-width: 120px;
+    }
+    
+    .modal-content {
+        padding: 25px 20px;
+    }
+    
+    .modal-content h2 {
+        font-size: 1.6rem;
+    }
+    
+    .modal-content #modalInfo {
+        font-size: 1rem;
+        padding: 12px;
+    }
+}
+
+/* ================================================================ */
+/* ریسپانسیو برای عکس‌های تزئینی (موبایل و تبلت)                 */
+/* ================================================================ */
+
+/* تبلت */
+@media (max-width: 768px) {
+    .deco-item {
+        width: 70px;
+        height: 70px;
+    }
+    
+    .deco-grid {
+        gap: 15px;
+    }
+}
+
+/* موبایل بزرگ */
+@media (max-width: 550px) {
+    .deco-item {
+        width: 60px;
+        height: 60px;
+        border-width: 2px;
+    }
+    
+    .deco-grid {
+        gap: 12px;
+    }
+}
+
+/* موبایل کوچک */
+@media (max-width: 400px) {
+    .deco-item {
+        width: 50px;
+        height: 50px;
+        border-width: 2px;
+    }
+    
+    .deco-grid {
+        gap: 8px;
+    }
+}
